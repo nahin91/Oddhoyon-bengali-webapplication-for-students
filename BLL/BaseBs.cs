@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BLL
+{
+    public class BaseBs
+    {
+        public UsersBs userBs { get; set; }
+
+        public BaseBs()
+        {
+            userBs = new UsersBs();
+        }
+    }
+}

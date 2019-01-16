@@ -1,0 +1,1157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Oddhoyon_AdminPanelModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Oddhoyon_AdminPanelModelStoreContainer">
+    <EntitySet Name="tbl_Chapter" EntityType="Oddhoyon_AdminPanelModel.Store.tbl_Chapter" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_ChapterContent" EntityType="Oddhoyon_AdminPanelModel.Store.tbl_ChapterContent" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_ChapterDetails" EntityType="Oddhoyon_AdminPanelModel.Store.tbl_ChapterDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_Class" EntityType="Oddhoyon_AdminPanelModel.Store.tbl_Class" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_PublicExam" EntityType="Oddhoyon_AdminPanelModel.Store.tbl_PublicExam" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_PublicExamSuggestion" EntityType="Oddhoyon_AdminPanelModel.Store.tbl_PublicExamSuggestion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_TextBook" EntityType="Oddhoyon_AdminPanelModel.Store.tbl_TextBook" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_Users" EntityType="Oddhoyon_AdminPanelModel.Store.tbl_Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_SuggestionLists" EntityType="Oddhoyon_AdminPanelModel.Store.tbl_SuggestionLists" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Comments" EntityType="Oddhoyon_AdminPanelModel.Store.Comments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Posts" EntityType="Oddhoyon_AdminPanelModel.Store.Posts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PostCategories" EntityType="Oddhoyon_AdminPanelModel.Store.PostCategories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CourseTests" EntityType="Oddhoyon_AdminPanelModel.Store.CourseTests" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CourseVidTests" EntityType="Oddhoyon_AdminPanelModel.Store.CourseVidTests" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_ChapQuestion" EntityType="Oddhoyon_AdminPanelModel.Store.tbl_ChapQuestion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_SubChapExam" EntityType="Oddhoyon_AdminPanelModel.Store.tbl_SubChapExam" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_UserAnsOfChap" EntityType="Oddhoyon_AdminPanelModel.Store.tbl_UserAnsOfChap" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_AnonymousMsg" EntityType="Oddhoyon_AdminPanelModel.Store.tbl_AnonymousMsg" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CourseEnrolleds" EntityType="Oddhoyon_AdminPanelModel.Store.CourseEnrolleds" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_tbl_Chapter_tbl_TextBook" Association="Oddhoyon_AdminPanelModel.Store.FK_tbl_Chapter_tbl_TextBook">
+      <End Role="tbl_TextBook" EntitySet="tbl_TextBook" />
+      <End Role="tbl_Chapter" EntitySet="tbl_Chapter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ChapterDetails_tbl_Chapter" Association="Oddhoyon_AdminPanelModel.Store.FK_tbl_ChapterDetails_tbl_Chapter">
+      <End Role="tbl_Chapter" EntitySet="tbl_Chapter" />
+      <End Role="tbl_ChapterDetails" EntitySet="tbl_ChapterDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ChapterContent_tbl_ChapterDetails" Association="Oddhoyon_AdminPanelModel.Store.FK_tbl_ChapterContent_tbl_ChapterDetails">
+      <End Role="tbl_ChapterDetails" EntitySet="tbl_ChapterDetails" />
+      <End Role="tbl_ChapterContent" EntitySet="tbl_ChapterContent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_TextBook_tbl_Class" Association="Oddhoyon_AdminPanelModel.Store.FK_tbl_TextBook_tbl_Class">
+      <End Role="tbl_Class" EntitySet="tbl_Class" />
+      <End Role="tbl_TextBook" EntitySet="tbl_TextBook" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_PublicExamSuggestion_tbl_PublicExam" Association="Oddhoyon_AdminPanelModel.Store.FK_tbl_PublicExamSuggestion_tbl_PublicExam">
+      <End Role="tbl_PublicExam" EntitySet="tbl_PublicExam" />
+      <End Role="tbl_PublicExamSuggestion" EntitySet="tbl_PublicExamSuggestion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_SuggestionLists_tbl_PublicExamSuggestion" Association="Oddhoyon_AdminPanelModel.Store.FK_tbl_SuggestionLists_tbl_PublicExamSuggestion">
+      <End Role="tbl_PublicExamSuggestion" EntitySet="tbl_PublicExamSuggestion" />
+      <End Role="tbl_SuggestionLists" EntitySet="tbl_SuggestionLists" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comment_Post" Association="Oddhoyon_AdminPanelModel.Store.FK_Comment_Post">
+      <End Role="Post" EntitySet="Posts" />
+      <End Role="Comment" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Post_PostCategory" Association="Oddhoyon_AdminPanelModel.Store.FK_Post_PostCategory">
+      <End Role="PostCategory" EntitySet="PostCategories" />
+      <End Role="Post" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CourseVidTest_CourseTest" Association="Oddhoyon_AdminPanelModel.Store.FK_CourseVidTest_CourseTest">
+      <End Role="CourseTest" EntitySet="CourseTests" />
+      <End Role="CourseVidTest" EntitySet="CourseVidTests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_ChapQuestion_tbl_SubChapExam" Association="Oddhoyon_AdminPanelModel.Store.FK_tbl_ChapQuestion_tbl_SubChapExam">
+      <End Role="tbl_SubChapExam" EntitySet="tbl_SubChapExam" />
+      <End Role="tbl_ChapQuestion" EntitySet="tbl_ChapQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_UserAnsOfChap_tbl_ChapQuestion" Association="Oddhoyon_AdminPanelModel.Store.FK_tbl_UserAnsOfChap_tbl_ChapQuestion">
+      <End Role="tbl_ChapQuestion" EntitySet="tbl_ChapQuestion" />
+      <End Role="tbl_UserAnsOfChap" EntitySet="tbl_UserAnsOfChap" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_SubChapExam_tbl_Chapter" Association="Oddhoyon_AdminPanelModel.Store.FK_tbl_SubChapExam_tbl_Chapter">
+      <End Role="tbl_Chapter" EntitySet="tbl_Chapter" />
+      <End Role="tbl_SubChapExam" EntitySet="tbl_SubChapExam" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_UserAnsOfChap_tbl_Users" Association="Oddhoyon_AdminPanelModel.Store.FK_tbl_UserAnsOfChap_tbl_Users">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="tbl_UserAnsOfChap" EntitySet="tbl_UserAnsOfChap" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CourseEnrolled_CourseTest" Association="Oddhoyon_AdminPanelModel.Store.FK_CourseEnrolled_CourseTest">
+      <End Role="CourseTest" EntitySet="CourseTests" />
+      <End Role="CourseEnrolled" EntitySet="CourseEnrolleds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CourseEnrolled_tbl_Users" Association="Oddhoyon_AdminPanelModel.Store.FK_CourseEnrolled_tbl_Users">
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+      <End Role="CourseEnrolled" EntitySet="CourseEnrolleds" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="tbl_Chapter">
+    <Key>
+      <PropertyRef Name="ChapterID" />
+    </Key>
+    <Property Name="ChapterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BookID" Type="int" Nullable="false" />
+    <Property Name="ChapterTitle" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="tbl_ChapterContent">
+    <Key>
+      <PropertyRef Name="ChapterContentID" />
+    </Key>
+    <Property Name="ChapterContentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChapterDetailsID" Type="int" Nullable="false" />
+    <Property Name="TopicTitle" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="TopicDetails" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Qst" Type="varchar(max)" Nullable="true" />
+    <Property Name="Ans" Type="varchar(max)" Nullable="true" />
+    <Property Name="Image" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Video" Type="nvarchar" Nullable="true" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="tbl_ChapterDetails">
+    <Key>
+      <PropertyRef Name="ChapterDetailsID" />
+    </Key>
+    <Property Name="ChapterDetailsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChapterID" Type="int" Nullable="false" />
+    <Property Name="ChapterName" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_Class">
+    <Key>
+      <PropertyRef Name="ClassID" />
+    </Key>
+    <Property Name="ClassID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClassName" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_PublicExam">
+    <Key>
+      <PropertyRef Name="PublicExamID" />
+    </Key>
+    <Property Name="PublicExamID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PublicExamName" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_PublicExamSuggestion">
+    <Key>
+      <PropertyRef Name="SuggestionID" />
+    </Key>
+    <Property Name="SuggestionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PublicExamID" Type="int" Nullable="true" />
+    <Property Name="SubjectName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Image" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="tbl_TextBook">
+    <Key>
+      <PropertyRef Name="BookID" />
+    </Key>
+    <Property Name="BookID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BookName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="BookType" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="YearOfEdition" Type="datetime" Nullable="true" />
+    <Property Name="Description" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="ClassID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UserEmail" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Role" Type="nvarchar" Nullable="true" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="tbl_SuggestionLists">
+    <Key>
+      <PropertyRef Name="SuggestionListID" />
+    </Key>
+    <Property Name="SuggestionListID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SuggestionID" Type="int" Nullable="true" />
+    <Property Name="Sug1Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Sug1image" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Sug2Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Sug2image" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Sug3Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Sug3image" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Comments">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PostID" Type="int" Nullable="true" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Author" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UserID" Type="int" Nullable="true" />
+    <Property Name="Contents" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Posts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Titile" Type="nvarchar" Nullable="true" MaxLength="150" />
+    <Property Name="Summary" Type="nvarchar" Nullable="true" MaxLength="150" />
+    <Property Name="Contents" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CatID" Type="int" Nullable="true" />
+    <Property Name="Author" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PostCategories">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CourseTests">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" Nullable="true" MaxLength="250" />
+    <Property Name="Summary" Type="nvarchar" Nullable="true" MaxLength="500" />
+    <Property Name="ImgIcon" Type="nvarchar" Nullable="true" MaxLength="250" />
+    <Property Name="Videolink" Type="nvarchar" Nullable="true" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="CourseVidTests">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CourseId" Type="int" Nullable="false" />
+    <Property Name="Video" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="Title" Type="nvarchar" Nullable="true" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbl_ChapQuestion">
+    <Key>
+      <PropertyRef Name="QuesID" />
+    </Key>
+    <Property Name="QuesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Question" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Opt1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Opt2" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Opt3" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Opt4" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="CorrectAns" Type="nvarchar" Nullable="true" MaxLength="2" />
+    <Property Name="SubChapExamID" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="tbl_SubChapExam">
+    <Key>
+      <PropertyRef Name="SubChapExamID" />
+    </Key>
+    <Property Name="SubChapExamID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChapterID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_UserAnsOfChap">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserAns" Type="nvarchar" Nullable="true" MaxLength="2" />
+    <Property Name="QstId" Type="int" Nullable="true" />
+    <Property Name="UserId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="tbl_AnonymousMsg">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Message" Type="nvarchar" Nullable="false" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="CourseEnrolleds">
+    <Key>
+      <PropertyRef Name="CourseEnrolledID" />
+    </Key>
+    <Property Name="CourseEnrolledID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="CourseId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tbl_Chapter_tbl_TextBook">
+    <End Role="tbl_TextBook" Type="Oddhoyon_AdminPanelModel.Store.tbl_TextBook" Multiplicity="1" />
+    <End Role="tbl_Chapter" Type="Oddhoyon_AdminPanelModel.Store.tbl_Chapter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_TextBook">
+        <PropertyRef Name="BookID" />
+      </Principal>
+      <Dependent Role="tbl_Chapter">
+        <PropertyRef Name="BookID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ChapterDetails_tbl_Chapter">
+    <End Role="tbl_Chapter" Type="Oddhoyon_AdminPanelModel.Store.tbl_Chapter" Multiplicity="1" />
+    <End Role="tbl_ChapterDetails" Type="Oddhoyon_AdminPanelModel.Store.tbl_ChapterDetails" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Chapter">
+        <PropertyRef Name="ChapterID" />
+      </Principal>
+      <Dependent Role="tbl_ChapterDetails">
+        <PropertyRef Name="ChapterDetailsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ChapterContent_tbl_ChapterDetails">
+    <End Role="tbl_ChapterDetails" Type="Oddhoyon_AdminPanelModel.Store.tbl_ChapterDetails" Multiplicity="1" />
+    <End Role="tbl_ChapterContent" Type="Oddhoyon_AdminPanelModel.Store.tbl_ChapterContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ChapterDetails">
+        <PropertyRef Name="ChapterDetailsID" />
+      </Principal>
+      <Dependent Role="tbl_ChapterContent">
+        <PropertyRef Name="ChapterDetailsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_TextBook_tbl_Class">
+    <End Role="tbl_Class" Type="Oddhoyon_AdminPanelModel.Store.tbl_Class" Multiplicity="1" />
+    <End Role="tbl_TextBook" Type="Oddhoyon_AdminPanelModel.Store.tbl_TextBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Class">
+        <PropertyRef Name="ClassID" />
+      </Principal>
+      <Dependent Role="tbl_TextBook">
+        <PropertyRef Name="ClassID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_PublicExamSuggestion_tbl_PublicExam">
+    <End Role="tbl_PublicExam" Type="Oddhoyon_AdminPanelModel.Store.tbl_PublicExam" Multiplicity="0..1" />
+    <End Role="tbl_PublicExamSuggestion" Type="Oddhoyon_AdminPanelModel.Store.tbl_PublicExamSuggestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_PublicExam">
+        <PropertyRef Name="PublicExamID" />
+      </Principal>
+      <Dependent Role="tbl_PublicExamSuggestion">
+        <PropertyRef Name="PublicExamID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_SuggestionLists_tbl_PublicExamSuggestion">
+    <End Role="tbl_PublicExamSuggestion" Type="Oddhoyon_AdminPanelModel.Store.tbl_PublicExamSuggestion" Multiplicity="0..1" />
+    <End Role="tbl_SuggestionLists" Type="Oddhoyon_AdminPanelModel.Store.tbl_SuggestionLists" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_PublicExamSuggestion">
+        <PropertyRef Name="SuggestionID" />
+      </Principal>
+      <Dependent Role="tbl_SuggestionLists">
+        <PropertyRef Name="SuggestionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comment_Post">
+    <End Role="Post" Type="Oddhoyon_AdminPanelModel.Store.Posts" Multiplicity="0..1" />
+    <End Role="Comment" Type="Oddhoyon_AdminPanelModel.Store.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="PostID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Post_PostCategory">
+    <End Role="PostCategory" Type="Oddhoyon_AdminPanelModel.Store.PostCategories" Multiplicity="0..1" />
+    <End Role="Post" Type="Oddhoyon_AdminPanelModel.Store.Posts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="CatID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CourseVidTest_CourseTest">
+    <End Role="CourseTest" Type="Oddhoyon_AdminPanelModel.Store.CourseTests" Multiplicity="1" />
+    <End Role="CourseVidTest" Type="Oddhoyon_AdminPanelModel.Store.CourseVidTests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CourseTest">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CourseVidTest">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_ChapQuestion_tbl_SubChapExam">
+    <End Role="tbl_SubChapExam" Type="Oddhoyon_AdminPanelModel.Store.tbl_SubChapExam" Multiplicity="0..1" />
+    <End Role="tbl_ChapQuestion" Type="Oddhoyon_AdminPanelModel.Store.tbl_ChapQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SubChapExam">
+        <PropertyRef Name="SubChapExamID" />
+      </Principal>
+      <Dependent Role="tbl_ChapQuestion">
+        <PropertyRef Name="SubChapExamID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_UserAnsOfChap_tbl_ChapQuestion">
+    <End Role="tbl_ChapQuestion" Type="Oddhoyon_AdminPanelModel.Store.tbl_ChapQuestion" Multiplicity="0..1" />
+    <End Role="tbl_UserAnsOfChap" Type="Oddhoyon_AdminPanelModel.Store.tbl_UserAnsOfChap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_ChapQuestion">
+        <PropertyRef Name="QuesID" />
+      </Principal>
+      <Dependent Role="tbl_UserAnsOfChap">
+        <PropertyRef Name="QstId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_SubChapExam_tbl_Chapter">
+    <End Role="tbl_Chapter" Type="Oddhoyon_AdminPanelModel.Store.tbl_Chapter" Multiplicity="1" />
+    <End Role="tbl_SubChapExam" Type="Oddhoyon_AdminPanelModel.Store.tbl_SubChapExam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Chapter">
+        <PropertyRef Name="ChapterID" />
+      </Principal>
+      <Dependent Role="tbl_SubChapExam">
+        <PropertyRef Name="ChapterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_UserAnsOfChap_tbl_Users">
+    <End Role="tbl_Users" Type="Oddhoyon_AdminPanelModel.Store.tbl_Users" Multiplicity="0..1" />
+    <End Role="tbl_UserAnsOfChap" Type="Oddhoyon_AdminPanelModel.Store.tbl_UserAnsOfChap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tbl_UserAnsOfChap">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CourseEnrolled_CourseTest">
+    <End Role="CourseTest" Type="Oddhoyon_AdminPanelModel.Store.CourseTests" Multiplicity="1" />
+    <End Role="CourseEnrolled" Type="Oddhoyon_AdminPanelModel.Store.CourseEnrolleds" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CourseTest">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CourseEnrolled">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CourseEnrolled_tbl_Users">
+    <End Role="tbl_Users" Type="Oddhoyon_AdminPanelModel.Store.tbl_Users" Multiplicity="1" />
+    <End Role="CourseEnrolled" Type="Oddhoyon_AdminPanelModel.Store.CourseEnrolleds" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="CourseEnrolled">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Oddhoyon_AdminPanelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbl_Chapter">
+          <Key>
+            <PropertyRef Name="ChapterID" />
+          </Key>
+          <Property Name="ChapterID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BookID" Type="Int32" Nullable="false" />
+          <Property Name="ChapterTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbl_TextBook" Relationship="Self.FK_tbl_Chapter_tbl_TextBook" FromRole="tbl_Chapter" ToRole="tbl_TextBook" />
+          <NavigationProperty Name="tbl_ChapterDetails" Relationship="Self.FK_tbl_ChapterDetails_tbl_Chapter" FromRole="tbl_Chapter" ToRole="tbl_ChapterDetails" />
+          <NavigationProperty Name="tbl_SubChapExam" Relationship="Oddhoyon_AdminPanelModel.FK_tbl_SubChapExam_tbl_Chapter" FromRole="tbl_Chapter" ToRole="tbl_SubChapExam" />
+        </EntityType>
+        <EntityType Name="tbl_ChapterContent">
+          <Key>
+            <PropertyRef Name="ChapterContentID" />
+          </Key>
+          <Property Name="ChapterContentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChapterDetailsID" Type="Int32" Nullable="false" />
+          <Property Name="TopicTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TopicDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Qst" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Ans" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbl_ChapterDetails" Relationship="Self.FK_tbl_ChapterContent_tbl_ChapterDetails" FromRole="tbl_ChapterContent" ToRole="tbl_ChapterDetails" />
+          <Property Name="Video" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_ChapterDetails">
+          <Key>
+            <PropertyRef Name="ChapterDetailsID" />
+          </Key>
+          <Property Name="ChapterDetailsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChapterID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tbl_Chapter" Relationship="Self.FK_tbl_ChapterDetails_tbl_Chapter" FromRole="tbl_ChapterDetails" ToRole="tbl_Chapter" />
+          <NavigationProperty Name="tbl_ChapterContent" Relationship="Self.FK_tbl_ChapterContent_tbl_ChapterDetails" FromRole="tbl_ChapterDetails" ToRole="tbl_ChapterContent" />
+          <Property Name="ChapterName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_Class">
+          <Key>
+            <PropertyRef Name="ClassID" />
+          </Key>
+          <Property Name="ClassID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClassName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tbl_TextBook" Relationship="Self.FK_tbl_TextBook_tbl_Class" FromRole="tbl_Class" ToRole="tbl_TextBook" />
+        </EntityType>
+        <EntityType Name="tbl_PublicExam">
+          <Key>
+            <PropertyRef Name="PublicExamID" />
+          </Key>
+          <Property Name="PublicExamID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PublicExamName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbl_PublicExamSuggestion" Relationship="Self.FK_tbl_PublicExamSuggestion_tbl_PublicExam" FromRole="tbl_PublicExam" ToRole="tbl_PublicExamSuggestion" />
+        </EntityType>
+        <EntityType Name="tbl_PublicExamSuggestion">
+          <Key>
+            <PropertyRef Name="SuggestionID" />
+          </Key>
+          <Property Name="SuggestionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PublicExamID" Type="Int32" />
+          <Property Name="SubjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbl_PublicExam" Relationship="Self.FK_tbl_PublicExamSuggestion_tbl_PublicExam" FromRole="tbl_PublicExamSuggestion" ToRole="tbl_PublicExam" />
+          <NavigationProperty Name="tbl_SuggestionLists" Relationship="Oddhoyon_AdminPanelModel.FK_tbl_SuggestionLists_tbl_PublicExamSuggestion" FromRole="tbl_PublicExamSuggestion" ToRole="tbl_SuggestionLists" />
+        </EntityType>
+        <EntityType Name="tbl_TextBook">
+          <Key>
+            <PropertyRef Name="BookID" />
+          </Key>
+          <Property Name="BookID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BookName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BookType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="YearOfEdition" Type="DateTime" Precision="0" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ClassID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tbl_Chapter" Relationship="Self.FK_tbl_Chapter_tbl_TextBook" FromRole="tbl_TextBook" ToRole="tbl_Chapter" />
+          <NavigationProperty Name="tbl_Class" Relationship="Self.FK_tbl_TextBook_tbl_Class" FromRole="tbl_TextBook" ToRole="tbl_Class" />
+        </EntityType>
+        <EntityType Name="tbl_Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Role" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbl_UserAnsOfChap" Relationship="Oddhoyon_AdminPanelModel.FK_tbl_UserAnsOfChap_tbl_Users" FromRole="tbl_Users" ToRole="tbl_UserAnsOfChap" />
+          <NavigationProperty Name="CourseEnrolleds" Relationship="Oddhoyon_AdminPanelModel.FK_CourseEnrolled_tbl_Users" FromRole="tbl_Users" ToRole="CourseEnrolled" />
+        </EntityType>
+        <Association Name="FK_tbl_Chapter_tbl_TextBook">
+          <End Role="tbl_TextBook" Type="Self.tbl_TextBook" Multiplicity="1" />
+          <End Role="tbl_Chapter" Type="Self.tbl_Chapter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_TextBook">
+              <PropertyRef Name="BookID" />
+            </Principal>
+            <Dependent Role="tbl_Chapter">
+              <PropertyRef Name="BookID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_ChapterDetails_tbl_Chapter">
+          <End Role="tbl_Chapter" Type="Self.tbl_Chapter" Multiplicity="1" />
+          <End Role="tbl_ChapterDetails" Type="Self.tbl_ChapterDetails" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Chapter">
+              <PropertyRef Name="ChapterID" />
+            </Principal>
+            <Dependent Role="tbl_ChapterDetails">
+              <PropertyRef Name="ChapterDetailsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_ChapterContent_tbl_ChapterDetails">
+          <End Role="tbl_ChapterDetails" Type="Self.tbl_ChapterDetails" Multiplicity="1" />
+          <End Role="tbl_ChapterContent" Type="Self.tbl_ChapterContent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ChapterDetails">
+              <PropertyRef Name="ChapterDetailsID" />
+            </Principal>
+            <Dependent Role="tbl_ChapterContent">
+              <PropertyRef Name="ChapterDetailsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_TextBook_tbl_Class">
+          <End Role="tbl_Class" Type="Self.tbl_Class" Multiplicity="1" />
+          <End Role="tbl_TextBook" Type="Self.tbl_TextBook" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Class">
+              <PropertyRef Name="ClassID" />
+            </Principal>
+            <Dependent Role="tbl_TextBook">
+              <PropertyRef Name="ClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_PublicExamSuggestion_tbl_PublicExam">
+          <End Role="tbl_PublicExam" Type="Self.tbl_PublicExam" Multiplicity="0..1" />
+          <End Role="tbl_PublicExamSuggestion" Type="Self.tbl_PublicExamSuggestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_PublicExam">
+              <PropertyRef Name="PublicExamID" />
+            </Principal>
+            <Dependent Role="tbl_PublicExamSuggestion">
+              <PropertyRef Name="PublicExamID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Oddhoyon_AdminPanelEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_Chapter" EntityType="Self.tbl_Chapter" />
+          <EntitySet Name="tbl_ChapterContent" EntityType="Self.tbl_ChapterContent" />
+          <EntitySet Name="tbl_ChapterDetails" EntityType="Self.tbl_ChapterDetails" />
+          <EntitySet Name="tbl_Class" EntityType="Self.tbl_Class" />
+          <EntitySet Name="tbl_PublicExam" EntityType="Self.tbl_PublicExam" />
+          <EntitySet Name="tbl_PublicExamSuggestion" EntityType="Self.tbl_PublicExamSuggestion" />
+          <EntitySet Name="tbl_TextBook" EntityType="Self.tbl_TextBook" />
+          <EntitySet Name="tbl_Users" EntityType="Self.tbl_Users" />
+          <AssociationSet Name="FK_tbl_Chapter_tbl_TextBook" Association="Self.FK_tbl_Chapter_tbl_TextBook">
+            <End Role="tbl_TextBook" EntitySet="tbl_TextBook" />
+            <End Role="tbl_Chapter" EntitySet="tbl_Chapter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_ChapterDetails_tbl_Chapter" Association="Self.FK_tbl_ChapterDetails_tbl_Chapter">
+            <End Role="tbl_Chapter" EntitySet="tbl_Chapter" />
+            <End Role="tbl_ChapterDetails" EntitySet="tbl_ChapterDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_ChapterContent_tbl_ChapterDetails" Association="Self.FK_tbl_ChapterContent_tbl_ChapterDetails">
+            <End Role="tbl_ChapterDetails" EntitySet="tbl_ChapterDetails" />
+            <End Role="tbl_ChapterContent" EntitySet="tbl_ChapterContent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_TextBook_tbl_Class" Association="Self.FK_tbl_TextBook_tbl_Class">
+            <End Role="tbl_Class" EntitySet="tbl_Class" />
+            <End Role="tbl_TextBook" EntitySet="tbl_TextBook" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_PublicExamSuggestion_tbl_PublicExam" Association="Self.FK_tbl_PublicExamSuggestion_tbl_PublicExam">
+            <End Role="tbl_PublicExam" EntitySet="tbl_PublicExam" />
+            <End Role="tbl_PublicExamSuggestion" EntitySet="tbl_PublicExamSuggestion" />
+          </AssociationSet>
+          <EntitySet Name="tbl_SuggestionLists" EntityType="Oddhoyon_AdminPanelModel.tbl_SuggestionLists" />
+          <AssociationSet Name="FK_tbl_SuggestionLists_tbl_PublicExamSuggestion" Association="Oddhoyon_AdminPanelModel.FK_tbl_SuggestionLists_tbl_PublicExamSuggestion">
+            <End Role="tbl_PublicExamSuggestion" EntitySet="tbl_PublicExamSuggestion" />
+            <End Role="tbl_SuggestionLists" EntitySet="tbl_SuggestionLists" />
+          </AssociationSet>
+          <EntitySet Name="Comments" EntityType="Oddhoyon_AdminPanelModel.Comment" />
+          <EntitySet Name="Posts" EntityType="Oddhoyon_AdminPanelModel.Post" />
+          <EntitySet Name="PostCategories" EntityType="Oddhoyon_AdminPanelModel.PostCategory" />
+          <AssociationSet Name="FK_Comment_Post" Association="Oddhoyon_AdminPanelModel.FK_Comment_Post">
+            <End Role="Post" EntitySet="Posts" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Post_PostCategory" Association="Oddhoyon_AdminPanelModel.FK_Post_PostCategory">
+            <End Role="PostCategory" EntitySet="PostCategories" />
+            <End Role="Post" EntitySet="Posts" />
+          </AssociationSet>
+          <EntitySet Name="CourseTests" EntityType="Oddhoyon_AdminPanelModel.CourseTest" />
+          <EntitySet Name="CourseVidTests" EntityType="Oddhoyon_AdminPanelModel.CourseVidTest" />
+          <AssociationSet Name="FK_CourseVidTest_CourseTest" Association="Oddhoyon_AdminPanelModel.FK_CourseVidTest_CourseTest">
+            <End Role="CourseTest" EntitySet="CourseTests" />
+            <End Role="CourseVidTest" EntitySet="CourseVidTests" />
+          </AssociationSet>
+          <EntitySet Name="tbl_ChapQuestion" EntityType="Oddhoyon_AdminPanelModel.tbl_ChapQuestion" />
+          <EntitySet Name="tbl_SubChapExam" EntityType="Oddhoyon_AdminPanelModel.tbl_SubChapExam" />
+          <EntitySet Name="tbl_UserAnsOfChap" EntityType="Oddhoyon_AdminPanelModel.tbl_UserAnsOfChap" />
+          <AssociationSet Name="FK_tbl_ChapQuestion_tbl_SubChapExam" Association="Oddhoyon_AdminPanelModel.FK_tbl_ChapQuestion_tbl_SubChapExam">
+            <End Role="tbl_SubChapExam" EntitySet="tbl_SubChapExam" />
+            <End Role="tbl_ChapQuestion" EntitySet="tbl_ChapQuestion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserAnsOfChap_tbl_ChapQuestion" Association="Oddhoyon_AdminPanelModel.FK_tbl_UserAnsOfChap_tbl_ChapQuestion">
+            <End Role="tbl_ChapQuestion" EntitySet="tbl_ChapQuestion" />
+            <End Role="tbl_UserAnsOfChap" EntitySet="tbl_UserAnsOfChap" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_SubChapExam_tbl_Chapter" Association="Oddhoyon_AdminPanelModel.FK_tbl_SubChapExam_tbl_Chapter">
+            <End Role="tbl_Chapter" EntitySet="tbl_Chapter" />
+            <End Role="tbl_SubChapExam" EntitySet="tbl_SubChapExam" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_UserAnsOfChap_tbl_Users" Association="Oddhoyon_AdminPanelModel.FK_tbl_UserAnsOfChap_tbl_Users">
+            <End Role="tbl_Users" EntitySet="tbl_Users" />
+            <End Role="tbl_UserAnsOfChap" EntitySet="tbl_UserAnsOfChap" />
+          </AssociationSet>
+          <EntitySet Name="tbl_AnonymousMsg" EntityType="Oddhoyon_AdminPanelModel.tbl_AnonymousMsg" />
+          <EntitySet Name="CourseEnrolleds" EntityType="Oddhoyon_AdminPanelModel.CourseEnrolled" />
+          <AssociationSet Name="FK_CourseEnrolled_CourseTest" Association="Oddhoyon_AdminPanelModel.FK_CourseEnrolled_CourseTest">
+            <End Role="CourseTest" EntitySet="CourseTests" />
+            <End Role="CourseEnrolled" EntitySet="CourseEnrolleds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CourseEnrolled_tbl_Users" Association="Oddhoyon_AdminPanelModel.FK_CourseEnrolled_tbl_Users">
+            <End Role="tbl_Users" EntitySet="tbl_Users" />
+            <End Role="CourseEnrolled" EntitySet="CourseEnrolleds" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tbl_SuggestionLists">
+          <Key>
+            <PropertyRef Name="SuggestionListID" />
+          </Key>
+          <Property Name="SuggestionListID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SuggestionID" Type="Int32" />
+          <Property Name="Sug1Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Sug1image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Sug2Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Sug2image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Sug3Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Sug3image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbl_PublicExamSuggestion" Relationship="Oddhoyon_AdminPanelModel.FK_tbl_SuggestionLists_tbl_PublicExamSuggestion" FromRole="tbl_SuggestionLists" ToRole="tbl_PublicExamSuggestion" />
+        </EntityType>
+        <Association Name="FK_tbl_SuggestionLists_tbl_PublicExamSuggestion">
+          <End Type="Oddhoyon_AdminPanelModel.tbl_PublicExamSuggestion" Role="tbl_PublicExamSuggestion" Multiplicity="0..1" />
+          <End Type="Oddhoyon_AdminPanelModel.tbl_SuggestionLists" Role="tbl_SuggestionLists" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_PublicExamSuggestion">
+              <PropertyRef Name="SuggestionID" />
+            </Principal>
+            <Dependent Role="tbl_SuggestionLists">
+              <PropertyRef Name="SuggestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="CommentID" />
+          </Key>
+          <Property Name="CommentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PostID" Type="Int32" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Post" Relationship="Oddhoyon_AdminPanelModel.FK_Comment_Post" FromRole="Comment" ToRole="Post" />
+        </EntityType>
+        <EntityType Name="Post">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Created" Type="DateTime" Precision="7" Nullable="false" />
+          <Property Name="Titile" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Summary" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CatID" Type="Int32" />
+          <NavigationProperty Name="Comments" Relationship="Oddhoyon_AdminPanelModel.FK_Comment_Post" FromRole="Post" ToRole="Comment" />
+          <NavigationProperty Name="PostCategory" Relationship="Oddhoyon_AdminPanelModel.FK_Post_PostCategory" FromRole="Post" ToRole="PostCategory" />
+          <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PostCategory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Posts" Relationship="Oddhoyon_AdminPanelModel.FK_Post_PostCategory" FromRole="PostCategory" ToRole="Post" />
+        </EntityType>
+        <Association Name="FK_Comment_Post">
+          <End Type="Oddhoyon_AdminPanelModel.Post" Role="Post" Multiplicity="0..1" />
+          <End Type="Oddhoyon_AdminPanelModel.Comment" Role="Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Post">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="PostID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Post_PostCategory">
+          <End Type="Oddhoyon_AdminPanelModel.PostCategory" Role="PostCategory" Multiplicity="0..1" />
+          <End Type="Oddhoyon_AdminPanelModel.Post" Role="Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostCategory">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Post">
+              <PropertyRef Name="CatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CourseTest">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Summary" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ImgIcon" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CourseVidTests" Relationship="Oddhoyon_AdminPanelModel.FK_CourseVidTest_CourseTest" FromRole="CourseTest" ToRole="CourseVidTest" />
+          <Property Name="Videolink" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CourseEnrolleds" Relationship="Oddhoyon_AdminPanelModel.FK_CourseEnrolled_CourseTest" FromRole="CourseTest" ToRole="CourseEnrolled" />
+        </EntityType>
+        <EntityType Name="CourseVidTest">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CourseId" Type="Int32" Nullable="false" />
+          <Property Name="Video" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CourseTest" Relationship="Oddhoyon_AdminPanelModel.FK_CourseVidTest_CourseTest" FromRole="CourseVidTest" ToRole="CourseTest" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_CourseVidTest_CourseTest">
+          <End Type="Oddhoyon_AdminPanelModel.CourseTest" Role="CourseTest" Multiplicity="1" />
+          <End Type="Oddhoyon_AdminPanelModel.CourseVidTest" Role="CourseVidTest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CourseTest">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CourseVidTest">
+              <PropertyRef Name="CourseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tbl_ChapQuestion">
+          <Key>
+            <PropertyRef Name="QuesID" />
+          </Key>
+          <Property Name="QuesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Question" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Opt1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Opt2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Opt3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Opt4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CorrectAns" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="SubChapExamID" Type="Int32" />
+          <NavigationProperty Name="tbl_SubChapExam" Relationship="Oddhoyon_AdminPanelModel.FK_tbl_ChapQuestion_tbl_SubChapExam" FromRole="tbl_ChapQuestion" ToRole="tbl_SubChapExam" />
+          <NavigationProperty Name="tbl_UserAnsOfChap" Relationship="Oddhoyon_AdminPanelModel.FK_tbl_UserAnsOfChap_tbl_ChapQuestion" FromRole="tbl_ChapQuestion" ToRole="tbl_UserAnsOfChap" />
+        </EntityType>
+        <EntityType Name="tbl_SubChapExam">
+          <Key>
+            <PropertyRef Name="SubChapExamID" />
+          </Key>
+          <Property Name="SubChapExamID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChapterID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbl_ChapQuestion" Relationship="Oddhoyon_AdminPanelModel.FK_tbl_ChapQuestion_tbl_SubChapExam" FromRole="tbl_SubChapExam" ToRole="tbl_ChapQuestion" />
+          <NavigationProperty Name="tbl_Chapter" Relationship="Oddhoyon_AdminPanelModel.FK_tbl_SubChapExam_tbl_Chapter" FromRole="tbl_SubChapExam" ToRole="tbl_Chapter" />
+        </EntityType>
+        <EntityType Name="tbl_UserAnsOfChap">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserAns" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="QstId" Type="Int32" />
+          <Property Name="UserId" Type="Int32" />
+          <NavigationProperty Name="tbl_ChapQuestion" Relationship="Oddhoyon_AdminPanelModel.FK_tbl_UserAnsOfChap_tbl_ChapQuestion" FromRole="tbl_UserAnsOfChap" ToRole="tbl_ChapQuestion" />
+          <NavigationProperty Name="tbl_Users" Relationship="Oddhoyon_AdminPanelModel.FK_tbl_UserAnsOfChap_tbl_Users" FromRole="tbl_UserAnsOfChap" ToRole="tbl_Users" />
+        </EntityType>
+        <Association Name="FK_tbl_ChapQuestion_tbl_SubChapExam">
+          <End Type="Oddhoyon_AdminPanelModel.tbl_SubChapExam" Role="tbl_SubChapExam" Multiplicity="0..1" />
+          <End Type="Oddhoyon_AdminPanelModel.tbl_ChapQuestion" Role="tbl_ChapQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_SubChapExam">
+              <PropertyRef Name="SubChapExamID" />
+            </Principal>
+            <Dependent Role="tbl_ChapQuestion">
+              <PropertyRef Name="SubChapExamID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserAnsOfChap_tbl_ChapQuestion">
+          <End Type="Oddhoyon_AdminPanelModel.tbl_ChapQuestion" Role="tbl_ChapQuestion" Multiplicity="0..1" />
+          <End Type="Oddhoyon_AdminPanelModel.tbl_UserAnsOfChap" Role="tbl_UserAnsOfChap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ChapQuestion">
+              <PropertyRef Name="QuesID" />
+            </Principal>
+            <Dependent Role="tbl_UserAnsOfChap">
+              <PropertyRef Name="QstId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_SubChapExam_tbl_Chapter">
+          <End Type="Oddhoyon_AdminPanelModel.tbl_Chapter" Role="tbl_Chapter" Multiplicity="1" />
+          <End Type="Oddhoyon_AdminPanelModel.tbl_SubChapExam" Role="tbl_SubChapExam" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Chapter">
+              <PropertyRef Name="ChapterID" />
+            </Principal>
+            <Dependent Role="tbl_SubChapExam">
+              <PropertyRef Name="ChapterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_UserAnsOfChap_tbl_Users">
+          <End Type="Oddhoyon_AdminPanelModel.tbl_Users" Role="tbl_Users" Multiplicity="0..1" />
+          <End Type="Oddhoyon_AdminPanelModel.tbl_UserAnsOfChap" Role="tbl_UserAnsOfChap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="tbl_UserAnsOfChap">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tbl_AnonymousMsg">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Message" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CourseEnrolled">
+          <Key>
+            <PropertyRef Name="CourseEnrolledID" />
+          </Key>
+          <Property Name="CourseEnrolledID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="CourseId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CourseTest" Relationship="Oddhoyon_AdminPanelModel.FK_CourseEnrolled_CourseTest" FromRole="CourseEnrolled" ToRole="CourseTest" />
+          <NavigationProperty Name="tbl_Users" Relationship="Oddhoyon_AdminPanelModel.FK_CourseEnrolled_tbl_Users" FromRole="CourseEnrolled" ToRole="tbl_Users" />
+        </EntityType>
+        <Association Name="FK_CourseEnrolled_CourseTest">
+          <End Type="Oddhoyon_AdminPanelModel.CourseTest" Role="CourseTest" Multiplicity="1" />
+          <End Type="Oddhoyon_AdminPanelModel.CourseEnrolled" Role="CourseEnrolled" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CourseTest">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CourseEnrolled">
+              <PropertyRef Name="CourseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CourseEnrolled_tbl_Users">
+          <End Type="Oddhoyon_AdminPanelModel.tbl_Users" Role="tbl_Users" Multiplicity="1" />
+          <End Type="Oddhoyon_AdminPanelModel.CourseEnrolled" Role="CourseEnrolled" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="CourseEnrolled">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Oddhoyon_AdminPanelModelStoreContainer" CdmEntityContainer="Oddhoyon_AdminPanelEntities">
+    <EntitySetMapping Name="tbl_Chapter">
+      <EntityTypeMapping TypeName="IsTypeOf(Oddhoyon_AdminPanelModel.tbl_Chapter)">
+        <MappingFragment StoreEntitySet="tbl_Chapter">
+          <ScalarProperty Name="ChapterID" ColumnName="ChapterID" />
+          <ScalarProperty Name="BookID" ColumnName="BookID" />
+          <ScalarProperty Name="ChapterTitle" ColumnName="ChapterTitle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ChapterContent">
+      <EntityTypeMapping TypeName="IsTypeOf(Oddhoyon_AdminPanelModel.tbl_ChapterContent)">
+        <MappingFragment StoreEntitySet="tbl_ChapterContent">
+          <ScalarProperty Name="ChapterContentID" ColumnName="ChapterContentID" />
+          <ScalarProperty Name="ChapterDetailsID" ColumnName="ChapterDetailsID" />
+          <ScalarProperty Name="TopicTitle" ColumnName="TopicTitle" />
+          <ScalarProperty Name="TopicDetails" ColumnName="TopicDetails" />
+          <ScalarProperty Name="Qst" ColumnName="Qst" />
+          <ScalarProperty Name="Ans" ColumnName="Ans" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Video" ColumnName="Video" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ChapterDetails">
+      <EntityTypeMapping TypeName="IsTypeOf(Oddhoyon_AdminPanelModel.tbl_ChapterDetails)">
+        <MappingFragment StoreEntitySet="tbl_ChapterDetails">
+          <ScalarProperty Name="ChapterDetailsID" ColumnName="ChapterDetailsID" />
+          <ScalarProperty Name="ChapterID" ColumnName="ChapterID" />
+          <ScalarProperty Name="ChapterName" ColumnName="ChapterName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Class">
+      <EntityTypeMapping TypeName="IsTypeOf(Oddhoyon_AdminPanelModel.tbl_Class)">
+        <MappingFragment StoreEntitySet="tbl_Class">
+          <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+          <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PublicExam">
+      <EntityTypeMapping TypeName="IsTypeOf(Oddhoyon_AdminPanelModel.tbl_PublicExam)">
+        <MappingFragment StoreEntitySet="tbl_PublicExam">
+          <ScalarProperty Name="PublicExamID" ColumnName="PublicExamID" />
+          <ScalarProperty Name="PublicExamName" ColumnName="PublicExamName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PublicExamSuggestion">
+      <EntityTypeMapping TypeName="IsTypeOf(Oddhoyon_AdminPanelModel.tbl_PublicExamSuggestion)">
+        <MappingFragment StoreEntitySet="tbl_PublicExamSuggestion">
+          <ScalarProperty Name="SuggestionID" ColumnName="SuggestionID" />
+          <ScalarProperty Name="PublicExamID" ColumnName="PublicExamID" />
+          <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_TextBook">
+      <EntityTypeMapping TypeName="IsTypeOf(Oddhoyon_AdminPanelModel.tbl_TextBook)">
+        <MappingFragment StoreEntitySet="tbl_TextBook">
+          <ScalarProperty Name="BookID" ColumnName="BookID" />
+          <ScalarProperty Name="BookName" ColumnName="BookName" />
+          <ScalarProperty Name="BookType" ColumnName="BookType" />
+          <ScalarProperty Name="YearOfEdition" ColumnName="YearOfEdition" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Users">
+      <EntityTypeMapping TypeName="IsTypeOf(Oddhoyon_AdminPanelModel.tbl_Users)">
+        <MappingFragment StoreEntitySet="tbl_Users">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SuggestionLists">
+      <EntityTypeMapping TypeName="IsTypeOf(Oddhoyon_AdminPanelModel.tbl_SuggestionLists)">
+        <MappingFragment StoreEntitySet="tbl_SuggestionLists">
+          <ScalarProperty Name="SuggestionListID" ColumnName="SuggestionListID" />
+          <ScalarProperty Name="SuggestionID" ColumnName="SuggestionID" />
+          <ScalarProperty Name="Sug1Title" ColumnName="Sug1Title" />
+          <ScalarProperty Name="Sug1image" ColumnName="Sug1image" />
+          <ScalarProperty Name="Sug2Title" ColumnName="Sug2Title" />
+          <ScalarProperty Name="Sug2image" ColumnName="Sug2image" />
+          <ScalarProperty Name="Sug3Title" ColumnName="Sug3Title" />
+          <ScalarProperty Name="Sug3image" ColumnName="Sug3image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="IsTypeOf(Oddhoyon_AdminPanelModel.Comment)">
+        <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+          <ScalarProperty Name="PostID" ColumnName="PostID" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Contents" ColumnName="Contents" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="IsTypeOf(Oddhoyon_AdminPanelModel.Post)">
+        <MappingFragment StoreEntitySet="Posts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Titile" ColumnName="Titile" />
+          <ScalarProperty Name="Summary" ColumnName="Summary" />
+          <ScalarProperty Name="Contents" ColumnName="Contents" />
+          <ScalarProperty Name="CatID" ColumnName="CatID" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PostCategories">
+      <EntityTypeMapping TypeName="IsTypeOf(Oddhoyon_AdminPanelModel.PostCategory)">
+        <MappingFragment StoreEntitySet="PostCategories">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CourseTests">
+      <EntityTypeMapping TypeName="IsTypeOf(Oddhoyon_AdminPanelModel.CourseTest)">
+        <MappingFragment StoreEntitySet="CourseTests">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Summary" ColumnName="Summary" />
+          <ScalarProperty Name="ImgIcon" ColumnName="ImgIcon" />
+          <ScalarProperty Name="Videolink" ColumnName="Videolink" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CourseVidTests">
+      <EntityTypeMapping TypeName="IsTypeOf(Oddhoyon_AdminPanelModel.CourseVidTest)">
+        <MappingFragment StoreEntitySet="CourseVidTests">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="Video" ColumnName="Video" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ChapQuestion">
+      <EntityTypeMapping TypeName="IsTypeOf(Oddhoyon_AdminPanelModel.tbl_ChapQuestion)">
+        <MappingFragment StoreEntitySet="tbl_ChapQuestion">
+          <ScalarProperty Name="QuesID" ColumnName="QuesID" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Opt1" ColumnName="Opt1" />
+          <ScalarProperty Name="Opt2" ColumnName="Opt2" />
+          <ScalarProperty Name="Opt3" ColumnName="Opt3" />
+          <ScalarProperty Name="Opt4" ColumnName="Opt4" />
+          <ScalarProperty Name="CorrectAns" ColumnName="CorrectAns" />
+          <ScalarProperty Name="SubChapExamID" ColumnName="SubChapExamID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SubChapExam">
+      <EntityTypeMapping TypeName="IsTypeOf(Oddhoyon_AdminPanelModel.tbl_SubChapExam)">
+        <MappingFragment StoreEntitySet="tbl_SubChapExam">
+          <ScalarProperty Name="SubChapExamID" ColumnName="SubChapExamID" />
+          <ScalarProperty Name="ChapterID" ColumnName="ChapterID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_UserAnsOfChap">
+      <EntityTypeMapping TypeName="IsTypeOf(Oddhoyon_AdminPanelModel.tbl_UserAnsOfChap)">
+        <MappingFragment StoreEntitySet="tbl_UserAnsOfChap">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserAns" ColumnName="UserAns" />
+          <ScalarProperty Name="QstId" ColumnName="QstId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_AnonymousMsg">
+      <EntityTypeMapping TypeName="IsTypeOf(Oddhoyon_AdminPanelModel.tbl_AnonymousMsg)">
+        <MappingFragment StoreEntitySet="tbl_AnonymousMsg">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CourseEnrolleds">
+      <EntityTypeMapping TypeName="IsTypeOf(Oddhoyon_AdminPanelModel.CourseEnrolled)">
+        <MappingFragment StoreEntitySet="CourseEnrolleds">
+          <ScalarProperty Name="CourseEnrolledID" ColumnName="CourseEnrolledID" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
